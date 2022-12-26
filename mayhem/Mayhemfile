@@ -1,0 +1,10 @@
+project: pptx2md
+target: fuzz-parser
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /src/mayhem/fuzz_parser.py
+    libfuzzer: true
+    timeout: 12
+    max_length: 35000
