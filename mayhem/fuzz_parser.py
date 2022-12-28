@@ -2,6 +2,7 @@
 
 import atheris
 import sys
+import os
 import fuzz_helpers
 from pptx import Presentation
 
@@ -17,6 +18,7 @@ import struct
 outputter_classes = [outputter.wiki_outputter, outputter.madoko_outputter, outputter.md_outputter]
 
 
+@atheris.instrument_func
 def TestOneInput(data):
     fdp = fuzz_helpers.EnhancedFuzzedDataProvider(data)
     if len(data) < 200:
