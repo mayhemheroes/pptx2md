@@ -2,7 +2,6 @@
 
 import atheris
 import sys
-import os
 import fuzz_helpers
 from pptx import Presentation
 
@@ -36,14 +35,11 @@ def TestOneInput(data):
     except ValueError as e:
         if 'seek' in str(e):
             return -1
-        raise
-    except Exception as e:
-        print(type(e))
         raise e
     except RuntimeError as e:
         if 'encrypted' in str(e):
             return -1
-        raise
+        raise e
 
 
 def main():
