@@ -1,5 +1,6 @@
 # Atheris fuzzing utilities written by Bailey Capuano
 import io
+import os
 import tempfile
 import atheris
 import contextlib
